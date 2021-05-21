@@ -1,4 +1,3 @@
-#Board fuction is here
 
 board = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
@@ -14,8 +13,8 @@ def print_board(my_board):
             print(cell, end="|")
         print("\n-------")
 
+"""This fuction lets the player take their turn, It chooses the turn by inputing which player it moving, It also placing the point on the board and if the spot is taken it tell you and let you pick a new spot."""
 
-#Fuction to ask player if they want to move
 def take_turn(player):
     count = 0
 
@@ -30,7 +29,7 @@ def take_turn(player):
             print("That place is already filled.\nMove to which place?")
             continue
         board[(placed - 1) // 3][(placed - 1) % 3] = player
-
+"""This fuction has all of the possible ways to win inputed so if you win then it tells you that you won"""
 def winner():
   #first row
   if board[0][0] == board[0][1]== board[0][2] != ' ':
@@ -56,7 +55,8 @@ def winner():
   #collum three
   elif board[0][2] == board[1][2]== board[2][2] != ' ':
     return board[0][2]
-    
+
+"""This fuction is the main game it has the other fuctions in it so that the game runs smooth and in order"""
 def game():
   print_board(board)
   while winner() == None: 
